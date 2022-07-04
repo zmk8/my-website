@@ -1,28 +1,82 @@
 <!DOCTYPE html>
 <html>
     <head>
+      	<meta charset="UTF-8">
         <title>ZMK8</title>
         <link rel="stylesheet" href="./css/style.css">
+        <link rel = "icon" type = "image/png" href = "./images/Z.png">
+        <!-- For apple devices -->
+        <link rel = "apple-touch-icon" type = "image/png" href = "./images/Z.png"/>
+        <!-- Alert -->
+        <script src="./node_modules/sweetalert2/dist/sweetalert2.all.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            function showalert(){
+                Swal.fire({
+                    title: 'Contact Me',
+                    text: 'Hãy góp ý hoặc chia sẻ với tôi!',
+                    footer: '<a href="https://www.facebook.com/zmk8.88888888/" style="color: blue; text-decoration: none;">Facebook</a> | <a href="https://www.youtube.com/channel/UClh17piazuy5KzH4tJ9haHg" style="color: red; text-decoration: none;">Youtube</a> | <a href="https://github.com/zmk8" style="color: black; text-decoration: none;">Git</a>'
+                })  
+            }
+            function killCopy(e){
+                return false;
+            }
+
+            function reEnable(){
+                return true;
+            }
+
+            document.onselectstart=new Function ("return false");
+
+            if (window.sidebar){
+                document.onmousedown=killCopy;
+                document.onclick=reEnable;
+            }
+
+            var message="NoRightClicking"; function defeatIE() {if (document.all) {(message);return false;}} function defeatNS(e) {if (document.layers||(document.getElementById&&!document.all)) { if (e.which==2||e.which==3) {(message);return false;}}} if (document.layers) {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;} else{document.onmouseup=defeatNS;document.oncontextmenu=defeatIE;} document.oncontextmenu=new Function("return false") 
+            document.onkeydown = function(e) {
+                    if (e.ctrlKey && 
+                        (e.keyCode === 67 || 
+                        e.keyCode === 86 || 
+                        e.keyCode === 85 || 
+                        e.keyCode === 117)) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+            };
+            $(document).keypress("u",function(e) {
+            if(e.ctrlKey)
+            {
+            return false;
+            }
+            else
+            {
+            return true;
+            }
+            });
+        </script>
     </head>
     <body>
         <div class="banner">
             <div class="navbar">
                 <img src="./images/Z.png" class="logo">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li title="Thật ra thì cái này vô dụng~~~"><a href="">Home</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Login</a></li>
-                    <li><a href="#">Contact Me</a></li>
+                    <li><a href="#" onclick="showalert()">Contact Me</a></li>
                 </ul>
             </div>
             <div class="content">
-                <h1>Hello</h1>
-                <p>Hello xxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                <h1>Mã nguồn mở[100%FREE]</h1>
+                <p>Ở đây tôi cung cấp cho bạn miễn phí source code tự tay tôi tạo nên.<br>Đa số chúng đã xuất hiện nhiều trên mạng, nhưng lại không được nhiều người biết đến,<br>vậy nên tôi sẽ tự code lại hoặc tạo mới chúng và chia sẻ công khai!</p>
                 <div>
-                    <button type="button"><span></span>Watch more</button>
-                    <button type="button"><span></span>Subscribe</button>
+                    <button type="button" title="Nhớ đọc kỹ file README nhé bro!"><span></span><a href="https://drive.google.com/drive/folders/15PvwXGiHnR1eyPXV865R5L4yhNUhc3PB?usp=sharing" style="text-decoration: none; color: #fff;">Google Drive</a></button>
+                    <button type="button"><span></span><a href="https://www.youtube.com/channel/UClh17piazuy5KzH4tJ9haHg" style="text-decoration: none; color: #fff;">Subscribe Youtube</a></button>
                 </div>
             </div>
         </div>
+        
     </body>
 </html>
